@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using System.IO.Ports;
 using System.Data.OleDb;
+using System.Net;
 
 namespace CsharpDemoWC
 {
@@ -3989,10 +3990,33 @@ namespace CsharpDemoWC
                         ListViewItem item = new ListViewItem();
                         item = listView3.Items.Add((nS + 1).ToString(), (nS + 1).ToString());
                         item.SubItems.Add(stEpc);
-                        item.SubItems.Add("");
-                        item.SubItems.Add("");
-                        item.SubItems.Add("");
+                        item.SubItems.Add(stTid);
+                        item.SubItems.Add(stUsr);
+                        item.SubItems.Add(stPass);
+                        //string url = "http://localhost:3000/ins/";
+                        //WebRequest request = WebRequest.Create(url);
+                        //request.Method = "Post";
+                        //StringBuilder postData = new StringBuilder();
+                        //postData.AppendUrlEncoded();
+                        //    //"epc=" + stEpc+ "& tid="+ stTid;
 
+
+                        //byte[] byteArray = Encoding.UTF8.GetBytes(postData);
+                        //request.ContentType = "application/x-www-form-urlencoded";
+                        //request.ContentLength = byteArray.Length;
+                        //Stream dataStream;
+                        //try
+                        //{
+                        //    dataStream = request.GetRequestStream();
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    MessageBox.Show(ex.Message);
+                        //    return;
+                        //}
+                        //dataStream.Write(byteArray, 0, byteArray.Length);
+                        //dataStream.Close();
+                        
                     }
                     if (checkBox13.Checked)
                     {
@@ -4114,6 +4138,7 @@ namespace CsharpDemoWC
                     Thread.Sleep(100);
                 }
             }
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
