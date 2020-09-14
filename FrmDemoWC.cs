@@ -3574,7 +3574,7 @@ namespace CsharpDemoWC
                 }
             }
         }
-
+        #region Start Reading
         private void button21_Click(object sender, EventArgs e)
         {
             //开始读取
@@ -3595,7 +3595,7 @@ namespace CsharpDemoWC
             teThreadEPC = new Thread(new ThreadStart(this.ThreadReaderEPC));
             teThreadEPC.Start();
         }
-
+        #endregion
         private void button22_Click(object sender, EventArgs e)
         {
             //停止读取
@@ -3826,6 +3826,7 @@ namespace CsharpDemoWC
                     stEpc = str;
 
                     //如果选中TID则读之
+                    #region tid
                     if (checkBox11.Checked)
                     {
                         for (j = 0; j < 4; j++) AccessPassword[j] = 0;  //memset(AccessPassword, 0, 4);
@@ -3870,6 +3871,7 @@ namespace CsharpDemoWC
                             stTid = str;
                         }
                     }
+                    #endregion
 
                     //如果选中USER则读之
                     if (checkBox13.Checked)
